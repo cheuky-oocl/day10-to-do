@@ -1,13 +1,29 @@
-import {createContext, useContext} from "react";
+import {createContext, useContext, useReducer} from "react";
+import './App.css';
 
 export const initState = [
   {id: 1, text: "the first todo", done: false},
-  {id: 2, text: "the second todo", done: false},
+  {id: 2, text: "the second todo", done: true},
 ];
 export const TodoContext = createContext()
 
+function TodoItem(props){
+    return <div className={"todo-item"}>
+        <span className={props.todo.done? "todo-done": ""}>
+            {props.todo.text}
+        </span>
+    </div>
+}
+
 function TodoGroup() {
-  return null;
+  const {state, dispatch} = useContext(TodoContext)
+  return <div>
+      {
+          state.map((item,index) => {
+              return <TodoItem todo={item} key={index}/>
+          })
+      }
+  </div>
 }
 
 export function todoReducer(state, action) {
@@ -15,7 +31,7 @@ export function todoReducer(state, action) {
 }
 
 function App() {
-  const [state, dispatch] = useContext(todoReducer, initState);
+  const [state, dispatch] = useReducer(todoReducer, initState);
   return (
       <div>
         <TodoContext.Provider value={{state, dispatch}}>
