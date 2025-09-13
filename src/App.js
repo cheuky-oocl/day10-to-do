@@ -13,9 +13,12 @@ function App() {
   const [state, dispatch] = useReducer(todoReducer, initState);
   return (
       <div>
-        <TodoContext.Provider value={{state, dispatch}}>
-          <TodoGroup/>
-        </TodoContext.Provider>
+          <h1>Todo List</h1>
+          <div>
+            <TodoContext.Provider value={{state, dispatch}}>
+              <TodoGroup/>
+            </TodoContext.Provider>
+          </div>
       </div>
   );
 }
