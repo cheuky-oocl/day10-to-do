@@ -18,8 +18,9 @@ export function TodoInput() {
         setInputValue("")
     }
 
-    return <div>
-        <input type="text" value={inputValue} onChange={(event) => setInputValue(event.target.value)}/>
-        <button onClick={addTodoItem}>add</button>
+    return <div className={"todo-input"}>
+        <input type="text" value={inputValue} onChange={(event) => setInputValue(event.target.value)}
+               id={"todo-input"}/>
+        <button onClick={addTodoItem} id={"add-todo-button"}>add</button>
     </div>
 }

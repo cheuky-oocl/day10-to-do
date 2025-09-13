@@ -18,14 +18,14 @@ export function TodoItem(props) {
         })
     }
 
-    return <div>
+    return <div className={"todo-row"}>
         <div className={"todo-item"}>
-        <span
-            className={props.todo.done ? "todo-done" : ""}
-            onClick={makeAsDone}
-        >
-            {props.todo.text}
-        </span>
+            <span
+                className={props.todo.done ? "todo-done" : ""}
+                onClick={makeAsDone}
+            >
+                {props.todo.text}
+            </span>
         </div>
         <button onClick={deleteTodoItem}>X</button>
     </div>
