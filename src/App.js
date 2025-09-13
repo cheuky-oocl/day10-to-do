@@ -5,10 +5,7 @@ import {TodoContext} from "./contexts/TodoContext";
 import {TodoGroup} from "./components/TodoGroup";
 import {TodoInput} from "./components/TodoInput";
 
-export const initState = [
-    {id: 1, text: "the first todo", done: false},
-    {id: 2, text: "the second todo", done: true},
-];
+export const initState = [];
 
 function App() {
     const [state, dispatch] = useReducer(todoReducer, initState);
