@@ -1,11 +1,11 @@
-.todo-item{
-  width: 320px;
-  padding: 8px;
-  border: 1px solid black;
-  margin-top: 10px;
-  text-align: center;
+.todo-item {
+    width: 320px;
+    padding: 8px;
+    border: 1px solid black;
+    margin-top: 10px;
+    text-align: center;
 }
 
-.todo-item .todo-done{
-  text-decoration: line-through;
+.todo-item .todo-done {
+    text-decoration: line-through;
 }
