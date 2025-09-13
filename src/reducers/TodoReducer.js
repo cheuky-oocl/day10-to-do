@@ -20,7 +20,10 @@ export function todoReducer(state, action) {
             return state.filter((value) => value.id !== action.payload.id);
 
         case "ADD_TODO":
-            return [...state, action.payload.todo];
+            if (action.payload.todo.text.trim() !== "") {
+                return [...state, action.payload.todo];
+            }
+            return state;
 
         default:
             return state;
