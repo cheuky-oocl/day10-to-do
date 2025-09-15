@@ -1,13 +1,22 @@
 import './App.css';
 import {TodoList} from "./components/TodoList";
+import {createBrowserRouter, RouterProvider} from "react-router";
 
 export const initState = [];
 
+const routes = createBrowserRouter([
+    {
+        path: "/",
+        element: <TodoList/>
+    }
+    ]
+)
 
 function App() {
+
     return (
         <div>
-            <TodoList/>
+            <RouterProvider router={routes}/>
         </div>
     );
 }
