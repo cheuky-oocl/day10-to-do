@@ -12,7 +12,9 @@ export function TodoDetailPage() {
         return <div>Not found Todo</div>
     }
 
+    console.log(todo)
+
     return <div>
-        <TodoItem todo={todo[0]} index={id}/>
+        <span>{todo[0].text}</span>
     </div>
 }
