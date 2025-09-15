@@ -1,10 +1,10 @@
 import './App.css';
 import {TodoList} from "./components/TodoList";
-import {createBrowserRouter, NavLink, Outlet, RouterProvider} from "react-router";
+import {createBrowserRouter, NavLink, Outlet, RouterProvider, useRouteError} from "react-router";
 
 export const initState = [];
 
-function DefaultLayout(){
+function DefaultLayout() {
     return <div>
         <header>
             <nav>
@@ -19,10 +19,20 @@ function DefaultLayout(){
     </div>
 }
 
+function ErrorPage() {
+    const error = useRouteError();
+    return <div>
+        {error.status === 404
+            ? <div><h1>404 not found</h1><span>Try</span></div>
+            : <div>{JSON.stringify(error)}</div>}
+    </div>
+}
+
 const routes = createBrowserRouter([
     {
         path: "/",
         element: <DefaultLayout/>,
+        errorElement: <ErrorPage/>,
         children: [
             {
                 path: "/",
@@ -30,7 +40,7 @@ const routes = createBrowserRouter([
             }
         ]
     }
-    ]);
+]);
 
 function App() {
 
