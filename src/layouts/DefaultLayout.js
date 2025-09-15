@@ -28,13 +28,6 @@ export function DefaultLayout() {
 
     return <Layout>
         <Header>
-            {/*<nav>*/}
-            {/*    <ul>*/}
-            {/*        <li><NavLink to={"/"}>Home</NavLink></li>*/}
-            {/*        <li><NavLink to={"/todos"}>Todos</NavLink></li>*/}
-            {/*        <li><NavLink to={"/about-us"}>AboutUs</NavLink></li>*/}
-            {/*    </ul>*/}
-            {/*</nav>*/}
             <Menu onClick={onClick}
                   selectedKeys={[current]}
                   theme="dark"
