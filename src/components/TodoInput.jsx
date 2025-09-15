@@ -1,21 +1,15 @@
 import {useContext, useState} from "react";
 import {TodoContext} from "../contexts/TodoContext";
-import {api} from "../api/mockApi";
-
-const createTodo = (inputValue) => {
-    return api.post("/todos", {
-        text: inputValue.trim(),
-        done: false
-    }).then(res => res.data);
-}
+import {useTodoService} from "../useTodoService";
 
 export function TodoInput() {
-    const {state, dispatch} = useContext(TodoContext)
+    const {dispatch} = useContext(TodoContext)
     const [inputValue, setInputValue] = useState("")
+    const {createTodos} = useTodoService();
 
     function addTodoItem() {
         if (inputValue.trim()) {
-            createTodo(inputValue)
+            createTodos(inputValue)
                 .then(todo => dispatch({type: "ADD_TODO", payload: todo}))
             setInputValue("")
         }
