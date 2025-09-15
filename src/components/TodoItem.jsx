@@ -1,6 +1,7 @@
 import {useContext} from "react";
 import {TodoContext} from "../contexts/TodoContext";
 import {useNavigate} from "react-router";
+import {api} from "../api/mockApi";
 
 export function TodoItem(props) {
     const {dispatch} = useContext(TodoContext)
@@ -14,10 +15,8 @@ export function TodoItem(props) {
     }
 
     function deleteTodoItem() {
-        dispatch({
-            type: "DELETE_TODO",
-            payload: {id: props.todo.id}
-        })
+        api.delete("/todos/" + props.todo.id, {})
+            .then(dispatch({type: "DELETE_TODO", payload: {id: props.todo.id}}))
     }
 
     function toDetailPage() {
