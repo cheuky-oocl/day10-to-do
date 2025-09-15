@@ -3,7 +3,6 @@
     padding: 8px;
     border: 1px solid gray;
     margin-top: 10px;
-    text-align: center;
     display: inline-block;
 }
 
@@ -11,18 +10,40 @@
     text-decoration: line-through;
 }
 
+h1, h2{
+    text-align: center;
+}
+
 h3{
+    text-align: center;
     font-weight: normal;
+}
+
+.todo-input{
+    margin-top: 10px;
+    text-align: center;
 }
 
 .todo-row{
     margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 button{
+    border: black 1px solid;
     margin-top: 10px;
     padding: 10px;
     margin-left: 10px;
+}
+
+#delete-button{
+    background-color: red;
+}
+
+#detail-button{
+    background-color: lightgreen;
 }
 
 #add-todo-button{
@@ -41,4 +62,14 @@ button{
     margin-top: 10px;
     text-align: center;
     display: inline-block;
+}
+
+ul{
+    display: inline-block;
+}
+
+li{
+    display: inline;
+    margin-right: 20px;
+    margin-left: 20px;
 }
