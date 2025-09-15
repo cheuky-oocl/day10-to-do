@@ -11,25 +11,12 @@
     text-decoration: line-through;
 }
 
-h1{
-    text-align: center;
-}
-
 h3{
-    text-align: center;
     font-weight: normal;
-}
-
-div{
-    margin-top: 10px;
-    text-align: center;
 }
 
 .todo-row{
     margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 button{
