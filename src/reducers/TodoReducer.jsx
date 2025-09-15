@@ -25,6 +25,9 @@ export function todoReducer(state, action) {
             }
             return state;
 
+        case "LOAD_TODOS":
+            return action.payload
+
         default:
             return state;
     }
