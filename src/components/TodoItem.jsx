@@ -28,12 +28,6 @@ export function TodoItem(props) {
 
     return <div className={"todo-row"}>
         <div className={"todo-item"}>
-            {/*<span*/}
-            {/*    className={props.todo.done ? "todo-done" : ""}*/}
-            {/*    onClick={makeAsDone}*/}
-            {/*>*/}
-            {/*    {props.todo.text}*/}
-            {/*</span>*/}
             <Checkbox className={props.todo.done ? "todo-done" : ""} onChange={makeAsDone}
                       checked={props.todo.done}>{props.todo.text}</Checkbox>
         </div>
