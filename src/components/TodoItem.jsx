@@ -8,10 +8,11 @@ export function TodoItem(props) {
     const navigate = useNavigate()
 
     function makeAsDone() {
-        dispatch({
-            type: "TOGGLE_TODO",
-            payload: {id: props.todo.id}
-        })
+        api.put("/todos/" + props.todo.id, {
+            text: props.todo.text,
+            done: !props.todo.done
+        }).then(res => res.data)
+            .then(todo => dispatch({type: "UPDATE_TODO", payload: todo}))
     }
 
     function deleteTodoItem() {
