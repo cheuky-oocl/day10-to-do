@@ -7,7 +7,9 @@ export function DoneListPage() {
     const todo = state.filter((todo) => todo.done === true);
 
     if (todo.length === 0) {
-        return <div>Not found done Todo</div>
+        return <div className={"display-message"}>
+            <span>Not found done Todo</span>
+        </div>
     }
 
     return <div>

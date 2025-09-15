@@ -63,3 +63,10 @@ button{
     text-align: center;
     display: inline-block;
 }
+
+.display-message, #todo-detail{
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: large;
+}
