@@ -1,5 +1,5 @@
 import {NavLink, Outlet} from "react-router";
-import {Flex, Layout, Menu} from 'antd';
+import {Layout, Menu} from 'antd';
 import {useState} from "react";
 
 const {Header, Footer, Sider, Content} = Layout;
