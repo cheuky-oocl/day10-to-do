@@ -20,7 +20,8 @@ export function todoReducer(state, action) {
             return state.filter((value) => value.id !== action.payload.id);
 
         case "ADD_TODO":
-            return [...state, action.payload.todo];
+            console.log(action)
+            return [...state, action.payload];
 
         case "LOAD_TODOS":
             return action.payload
