@@ -6,16 +6,18 @@ export function TodoInput() {
     const [inputValue, setInputValue] = useState("")
 
     function addTodoItem() {
-        const newTodo = {
-            id: state.length + 1,
-            text: inputValue,
-            done: false
+        if (inputValue.trim()){
+            const newTodo = {
+                id: state.length + 1,
+                text: inputValue,
+                done: false
+            }
+            dispatch({
+                type: "ADD_TODO",
+                payload: {todo: newTodo}
+            })
+            setInputValue("")
         }
-        dispatch({
-            type: "ADD_TODO",
-            payload: {todo: newTodo}
-        })
-        setInputValue("")
     }
 
     return <div className={"todo-input"}>
