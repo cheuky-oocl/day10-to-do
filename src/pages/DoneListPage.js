@@ -13,6 +13,6 @@ export function DoneListPage() {
     }
 
     return <div>
-        {todo.map((item, index) => <TodoItem todo={item} index={index}/>)}
+        {todo.map((item, index) => <TodoItem todo={item} index={index} key={item.id}/>)}
     </div>
 }
