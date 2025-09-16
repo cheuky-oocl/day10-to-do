@@ -2,7 +2,7 @@ import {NavLink, Outlet} from "react-router";
 import {Layout, Menu} from 'antd';
 import {useState} from "react";
 
-const {Header, Footer, Sider, Content} = Layout;
+const {Header, Footer, Content} = Layout;
 
 export function DefaultLayout() {
     const [current, setCurrent] = useState('home');

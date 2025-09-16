@@ -12,9 +12,9 @@ api.interceptors.response.use(
         return response;
     },
     (error) => {
-        const {status, data} = error.response;
+        const {status} = error.response;
         if (status === 404){
-            message.error(error.message, 10_000).then(r => {});
+            message.error(error.message, 10_000).then(() => {});
         }
         return Promise.reject(error);
     }
