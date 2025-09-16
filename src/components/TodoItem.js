@@ -23,7 +23,7 @@ export function TodoItem(props) {
     }
 
     function toDetailPage() {
-        navigate("todos/" + props.todo.id)
+        navigate("/todos/" + props.todo.id)
     }
 
     return <div className={"todo-row"}>
